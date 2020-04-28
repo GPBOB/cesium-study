@@ -5,9 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <link rel="stylesheet" href="./Cesium/Widgets/widgets.css">
+    <link rel="stylesheet" href="Cesium/Widgets/widgets.css">
+    <link href="drawHelper/lib/cesium/Widgets/widgets.css" rel="stylesheet" />
+    <link href="drawHelper/css/index.css" rel="stylesheet" />
+    <link href="drawHelper/lib/layui/css/layui.css" rel="stylesheet" />
     <title><%= htmlWebpackPlugin.options.title %></title>
-    <script src="./Cesium/Cesium.js"></script>
+    
+    
     
   </head>
   <body>
@@ -16,5 +20,27 @@
     </noscript>
     <div id="app"></div>
     <!-- built files will be auto injected -->
+    <!-- <script src="Cesium/Cesium.js"></script> -->
+    <script type="text/javascript" src="drawHelper/lib/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/turf/turf.min.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/layui/layui.all.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/Cesium.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/plotUtil.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobeTracker.js"></script> 
+    <script type="text/javascript" src="drawHelper/lib/cesium/algorithm.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobeTooltip.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePolygonDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePolylineDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobeRectangleDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobeCircleDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePointDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobeBufferLineDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePointMeasure.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePolylineSpaceMeasure.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePolylineStickMeasure.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/GlobePolygonMeasure.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/PlotStraightArrowDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/PlotAttackArrowDrawer.js"></script>
+    <script type="text/javascript" src="drawHelper/lib/cesium/PlotPincerArrowDrawer.js"></script>
   </body>
 </html>

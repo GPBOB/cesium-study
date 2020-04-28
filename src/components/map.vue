@@ -7,7 +7,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
-      viewer: null,
+      viewers: null,
       googleMapURL:
         "http://mt1.google.cn/vt/lyrs=s&hl=zh-CN&x={x}&y={y}&z={z}&s=Gali",
       arcGisURL:
@@ -41,21 +41,27 @@ export default {
     }
   },
   mounted() {
-    let googleMap = new Cesium.UrlTemplateImageryProvider({
-      url: this.googleMapURL
-    });
-    this.viewer = new Cesium.Viewer("map", {
-      geocoder: false,
-      homeButton: false,
-      sceneModePicker: false,
-      baseLayerPicker: true,
-      navigationHelpButton: false,
-      animation: false,
-      timeline: false,
-      fullscreenButton: false,
-      vrButton: false,
-      imageryProvider: googleMap
-    });
+    this.viewers = this.$drawHelper.initVewer();
+    // let googleMap = new Cesium.UrlTemplateImageryProvider({
+    //   url: this.googleMapURL
+    // });
+    // Cesium.Ion.defaultAccessToken = this.$config.cesium_token;
+
+    // this.viewer = new Cesium.Viewer("map", {
+    //   geocoder: false,
+    //   homeButton: false,
+    //   sceneModePicker: false,
+    //   baseLayerPicker: true,
+    //   navigationHelpButton: false,
+    //   animation: false,
+    //   timeline: false,
+    //   fullscreenButton: false,
+    //   vrButton: false,
+    //   imageryProvider: googleMap,
+    //   terrainProvider: Cesium.createWorldTerrain()
+    // });
+    // //去除cesium图标
+    // this.viewer._cesiumWidget._creditContainer.style.display = "none";
   },
   watch: {}
 };
