@@ -1,0 +1,277 @@
+.notice-enter-active,
+.notice-leave-active,
+.list-enter-active,
+.list-leave-active,
+.rightInLeftOut-enter-active,
+.rightInLeftOut-leave-active,
+.page-enter-active,
+.page-leave-active,
+.poplayer-enter-active,
+.poplayer-leave-active,
+.zoomUp-enter-active,
+.zoomUp-leave-active,
+.bottom-enter-active,
+.bottom-leave-active{
+	animation-duration: .5s;
+	animation-fill-mode: both; 
+}
+
+.fold-enter-active,
+.fold-leave-active,
+.fadeDown-enter-active,
+.fadeDown-leave-active {
+	animation-duration: 0.2s;
+	animation-fill-mode: both;
+}
+.bottom-enter-active {
+	animation-name: bottomIn;
+}
+
+.bottom-leave-active {
+	animation-name: bottomOut;
+}
+.notice-enter-active {
+	animation-name: fadeInRight;
+}
+
+.notice-leave-active {
+	animation-name: fadeOutRight;
+}
+.rightInLeftOut-enter-active {
+	animation-name: fadeInRight;
+}
+.rightInLeftOut-leave-active {
+	animation-name: fadeOutLeft;
+}
+.list-enter-active {
+	animation-name: fadeInRight;
+}
+
+.list-leave-active {
+	animation-name: fadeOutRight;
+}
+
+.page-enter-active {
+	animation-name: fadeInRight;
+}
+
+.page-leave-active {
+	animation-name: fadeOutRight;
+}
+.poplayer-enter-active {
+	animation-name: PopIn;
+}
+
+.poplayer-leave-active {
+	animation-name: PopOut;
+}
+
+.zoomUp-enter-active {
+	animation-name: zoomInUp;
+}
+
+.zoomUp-leave-active {
+	animation-name: zoomOutUp;
+}
+
+.fold-enter-active {
+	animation-name: foldIn;
+}
+
+.fold-leave-active {
+	animation-name: foldOut;
+}
+
+.fadeDown-enter-active {
+	animation-name: fadeDownIn;
+}
+
+.fadeDown-leave-active {
+	animation-name: fadeDownOut;
+}
+@keyframes fadeOutLeft {
+	from {
+		transform: none;
+	}
+
+	to {
+		transform: translate3d(-100%, 0, 0);
+	}
+}
+@keyframes DropIn {
+	from {
+		opacity: 0;
+		transform: translate3d(0, 52px, 0) scaleY(0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+@keyframes DropUp {
+	from {
+		background-position:0 62px;
+	}
+
+	to {
+		background-position:0 0;
+	}
+}
+@keyframes fadeInLeft {
+	from {
+		opacity: 0;
+		transform: translate3d(-100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+@keyframes fadeOutRight {
+	from {
+		transform: none;
+	}
+
+	to { 
+		transform: translate3d(100%, 0, 0);
+	}
+}
+
+@keyframes fadeInRight {
+	from {
+		opacity: 0;
+		transform: translate3d(100%, 0, 0);
+	}
+
+	to {
+		opacity: 1;
+		transform: none;
+	}
+}
+
+
+@keyframes PopOut {
+	from {
+		opacity: 1;
+		transform: scale(1);
+	}
+
+	to {
+		opacity: 0;
+		transform: scale(0.5);
+	}
+}
+
+@keyframes PopIn {
+	from {
+		opacity: 0;
+		transform: scale(0.1);
+	}
+
+	to {
+		opacity: 1;
+		transform: scale(1);
+	}
+}
+
+@keyframes zoomInUp {
+	from {
+		opacity: 0;
+		transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 800px, 0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	60% {
+		opacity: 0.8;
+		transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 100px, 0);
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+	}
+}
+
+@keyframes zoomOutUp {
+	40% {
+		opacity: 1;
+		transform: scale3d(0.475, 0.475, 0.475) translate3d(0, 150px, 0);
+		animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+	}
+
+	to {
+		opacity: 0;
+		transform: scale3d(0.1, 0.1, 0.1) translate3d(0, -2000px, 0);
+		/* transform-origin: center bottom;
+		animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);*/
+	}
+}
+
+@keyframes foldIn {
+	from {
+		opacity: 0;
+		max-height: 0;
+	}
+
+	to {
+		opacity: 1;
+		max-height: 400px;
+	}
+}
+
+@keyframes foldOut {
+	from {
+		opacity: 1;
+		max-height: 400px;
+	}
+
+	to {
+		opacity: 0;
+		max-height: 0;
+	}
+}
+@keyframes fadeDownIn {
+	from {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+@keyframes fadeDownOut {
+	from {
+		opacity: 1;
+		transform: translateX(0);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateX(-200px);
+	}
+}
+@keyframes bottomIn {
+	from {
+		opacity: 0;
+		transform: translateY(200px);
+	}
+
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes bottomOut {
+	from {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	to {
+		opacity: 0;
+		transform: translateY(200px);
+	}
+}

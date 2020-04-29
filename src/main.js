@@ -2,18 +2,20 @@ import Vue from "vue";
 import App from "./App.vue";
 import router from "./router";
 import store from "./store";
-import Axios from "axios";
 import Antd from "ant-design-vue";
 import config from "@/config";
-import drawHelper from "@/assets/js/draw";
+import https from "@/api";
 import "ant-design-vue/dist/antd.css";
+import localStore from "storejs";
 
 Vue.use(Antd);
 
 Vue.config.productionTip = false;
 
 Vue.prototype.$config = config;
-Vue.prototype.$drawHelper = drawHelper;
+Vue.prototype.$https = https;
+Vue.prototype.$store = store;
+Vue.prototype.$localStore = localStore;
 
 new Vue({
   router,
