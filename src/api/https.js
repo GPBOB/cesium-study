@@ -8,8 +8,7 @@ Axios.defaults.timeout = 5000;
 Axios.interceptors.request.use(
   config => {
     const token = store.state.token;
-    if (!token) {
-    }
+    // if (!token) {}
     token && (config.headers.Authorization = token);
     return config;
   },
@@ -51,7 +50,7 @@ const https = {
   get: function(url, params) {
     return new Promise((resolve, reject) => {
       Axios.get(url, {
-        params: params,
+        params: params
       })
         .then(res => {
           resolve(res.data);
@@ -108,6 +107,6 @@ const https = {
           reject(err.data);
         });
     });
-  },
+  }
 };
 export default https;

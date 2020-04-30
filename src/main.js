@@ -7,6 +7,7 @@ import config from "@/config";
 import https from "@/api";
 import "ant-design-vue/dist/antd.css";
 import localStore from "storejs";
+import "@/assets/css/transition.css";
 
 Vue.use(Antd);
 

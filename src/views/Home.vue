@@ -1,30 +1,34 @@
 <template>
   <div class="home">
-    <MapComponent ref="mapViewer" :mapImage="mapImage" />
-    <sideComponent></sideComponent>
+    <component
+      v-for="(item, index) in loadComp"
+      :key="index"
+      :is="comps[item]"
+    ></component>
+    <Menu></Menu>
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-import MapComponent from "@/components/mapComponent.vue";
-import sideComponent from "@/components/sideComponent";
+import comps from "@/components"; //引入组件
+import Menu from "@/components/menu";
 import map from "@/map";
 
 export default {
   name: "Home",
   data() {
     return {
-      mapImage: 1
+      mapImage: 1,
+      loadComp: ["mapComp"], //需要引入的组件
+      comps
     };
   },
   components: {
-    MapComponent,
-    sideComponent
+    Menu
   },
   methods: {},
-  mounted() {
-  }
+  mounted() {}
 };
 </script>
 <style lang="less" scope>

@@ -10,6 +10,14 @@ import store from "@/store";
 
 Vue.use(VueRouter);
 
+/**
+ * 重写路由的push方法
+ */
+const routerPush = VueRouter.prototype.push;
+VueRouter.prototype.push = function push(location) {
+  return routerPush.call(this, location).catch(error=> error)
+};
+
 const createRouter = () =>
   new VueRouter({
     mode: "hash",
@@ -37,6 +45,7 @@ router.beforeEach((to, from, next) => {
       ) {
         //动态添加的路由在router.options中没有，是vue故意的
         store.dispatch("GenerateRoutes").then(res => {
+          // console.log(store.getters.addRouters)
           router.addRoutes(store.getters.addRouters);
           next({ ...to, replace: true });
         });

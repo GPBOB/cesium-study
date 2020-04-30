@@ -5,7 +5,7 @@
 <script>
 import map from "@/map";
 export default {
-  name: "HelloWorld",
+  name: "mapComp",
   data() {
     return {
       map,

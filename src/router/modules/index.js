@@ -1,8 +1,9 @@
+// webpack导出所有路由
 let routeFile = require.context("/", false, /\.js$/);
 let routes = [];
 routeFile.keys().forEach(el => {
-  for (let key in routeFile(el).default) {
-    routes[key] = routeFile(el).default[key];
+  if (el !== "./index.js") {
+    routes = routes.concat(routeFile(el).default);
   }
 });
 export default routes;
